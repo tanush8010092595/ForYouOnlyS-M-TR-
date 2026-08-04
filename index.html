@@ -77,14 +77,20 @@ Mi tuzi a fkt 🥺<br><br>
 </div>
 </div>
 <script>
-function openLetter(){
-document.querySelector('.envelope').classList.add('open');
-setTimeout(()=>{
-loading.style.display<br><br>='none';
-main.style.display='block';
-document.getElementById('bgm').play().catch(()=>{});
-fireworks();
-},1100);
+function openLetter() {
+    document.querySelector('.envelope').classList.add('open');
+
+    setTimeout(() => {
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('main').style.display = 'block';
+
+        const bgm = document.getElementById('bgm');
+        if (bgm) {
+            bgm.play().catch(() => {});
+        }
+
+        fireworks();
+    }, 1100);
 }
 for(let i=0;i<60;i++){
 let s=document.createElement('div');
